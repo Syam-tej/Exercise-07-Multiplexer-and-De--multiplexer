@@ -47,17 +47,17 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-Step1:- Open Quartus II Software.
+### Step1:- Open Quartus II Software.
 
-Step2:- Create a new project such that the name of the project is used for name of the module.
+### Step2:- Create a new project such that the name of the project is used for name of the module.
 
-Step3:- Develop the program for both Multiplexer and De-Multiplexer.
+### Step3:- Develop the program for both Multiplexer and De-Multiplexer.
 
-Step4:- Run the RTL Simulation.
+### Step4:- Run the RTL Simulation.
 
-Step5:- Simulate the timing Diagram.
+### Step5:- Simulate the timing Diagram.
 
-Step6:- Validate the outputs.
+### Step6:- Validate the outputs.
 
 ### PROGRAM 
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
