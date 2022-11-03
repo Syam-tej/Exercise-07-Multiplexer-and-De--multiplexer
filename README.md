@@ -47,42 +47,84 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-/* write all the steps invloved */
+Step1:- Open Quartus II Software.
 
+Step2:- Create a new project such that the name of the project is used for name of the module.
 
+Step3:- Develop the program for both Multiplexer and De-Multiplexer.
+
+Step4:- Run the RTL Simulation.
+
+Step5:- Simulate the timing Diagram.
+
+Step6:- Validate the outputs.
 
 ### PROGRAM 
-/*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+### Developed by:P.SYAM TEJ
+### RegisterNumber:212221240056
+## Multiplexer
+module mul(I0,I1,I2,I3,S0,S1,Y);
+input I0,I1,I2,I3,S0,S1;
+output Y;
+wire P,Q,R,S,S0c,S1c;
+not(S0c,S0);
+nor(S1c,S1);
+and (P,S0c,S1c,I0);
+and(Q,S0c,S1,I1);
+and(R,S0,S1c,I2);
+and(S,S0,S1,I3);
+or(Y,P,Q,R,S);
+endmodule
+
+## De-Multiplexer
+
+module demul(Y0,Y1,Y2,Y3,S0,S1,I);
+input I,S0,S1;
+output Y0,Y1,Y2,Y3;
+wire S0c,S1c;
+not(S0c,S0);
+nor(S1c,S1);
+and (Y0,I,S0c,S1c);
+and(Y1,I,S0c,S1);
+and(Y2,I,S0,S1c);
+and(Y3,I,S0,S1);
+endmodule
+
+
+###  RTL LOGIC  
+### Multiplexer:
+
+<img width="615" alt="ex7 rtl1" src="https://user-images.githubusercontent.com/93427522/199723850-ba16094c-db06-4ecd-96cd-fb1ada370ea0.png">
+
+### De-Multiplexer:
+
+<img width="615" alt="ex7 rtl2" src="https://user-images.githubusercontent.com/93427522/199723889-a4e1939b-7af8-4288-9528-587e73e8faaa.png">
+
+### TIMING DIAGRAMS
+### Multiplexer:
+
+<img width="640" alt="ex7 td1" src="https://user-images.githubusercontent.com/93427522/199724813-935d8ea1-656d-4865-a378-62addc5203c2.png">
 
 
 
+### De-Multiplexer
 
-
-
-### RTL LOGIC  
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS  
-
+<img width="646" alt="ex7 dm td1" src="https://user-images.githubusercontent.com/93427522/199724282-0a839889-f3e0-448e-a71b-527268853dbb.png">
 
 
 
 
 ### TRUTH TABLE 
 
+### Multiplexer:
+<img width="235" alt="tt1 ex7" src="https://user-images.githubusercontent.com/93427522/199726021-7f457c9b-e762-4e34-83cc-77c69a8c8498.png">
 
+### De-Multiplexer:
+<img width="614" alt="tt2 ex7" src="https://user-images.githubusercontent.com/93427522/199726051-77e65936-6abc-4131-b3ca-ebf7a2f310f1.png">
 
 
 
 
 ### RESULTS 
+Therefore 4X1 multiplexer and 1X4 de multiplexer are successfully implemented using verilog and validate its outputs
